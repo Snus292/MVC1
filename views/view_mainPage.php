@@ -14,25 +14,28 @@
             </div>
         </div>
         <div class="row justify-content-center mb-30-none">
+            <?php foreach ($arrayResult as $data){?>
             <div class="col-lg-4 col-sm-8 mb-30">
                 <div class="blog-item">
                     <div class="blog-thumb">
-                        <img src="assets/images/blog-1.png" alt="blog image">
+                        <img src="<?=$data["IMAGE"]?>" alt="blog image">
                     </div>
                     <div class="blog-content">
                         <div class="meta-post d-flex flex-wrap">
                             <div class="meta-user">
-                                <a href="#"><i class="fas fa-user"></i> <span>Keven Feil</span></a>
+                                <a href="#"><i class="fas fa-user"></i> <span><?=$data["AUTHOR"]?></span></a>
                             </div>
                             <div class="meta-date">
-                                <a href="#"><i class="fas fa-calendar-alt"></i> <span>16 dec 2019</span></a>
+                                <a href="#"><i class="fas fa-calendar-alt"></i> <span><?=$data["DATE"]?></span></a>
                             </div>
                         </div>
-                        <h5 class="title"><a href="blog-details.html">Blog Hosting Site</a> </h5>
-                        <p>Nulla morbi, ad pur Portwisu morbsed id, arcu vestibulum dolor conmtum ac egestas lorem elit libero. </p>
+                        <h5 class="title"><a href="blog-details.html"><?=$data["TITLE"]?></a> </h5>
+                        <p><?=$data["TEXT"]?></p>
                     </div>
                 </div>
             </div>
+            <?php}?>
+
             <div class="col-lg-4 col-sm-8 mb-30">
                 <div class="blog-item">
                     <div class="blog-thumb">
