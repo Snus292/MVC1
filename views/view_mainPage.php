@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row justify-content-center mb-30-none">
-            <?php foreach ($arrayResult as $data){?>
+            <?php foreach ($arrayResult as $data) {?>
             <div class="col-lg-4 col-sm-8 mb-30">
                 <div class="blog-item">
                     <div class="blog-thumb">
@@ -33,8 +33,8 @@
                         <p><?=$data["TEXT"]?></p>
                     </div>
                 </div>
-            </div>
-            <?php}?>
+            </div> 
+            <?php } ?>
 
             <div class="col-lg-4 col-sm-8 mb-30">
                 <div class="blog-item">
@@ -250,4 +250,3 @@
         </div>
     </div>
 </footer>
-<!-- footer-section end -->
