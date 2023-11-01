@@ -1,4 +1,7 @@
+
 <?php
+/*
+
 
 $dbHost = "localhost";
 $dbUser = "phpmvc1"; 
@@ -12,4 +15,7 @@ $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
 if ($db->connect_error) {
     die("Ошибка подключения к базе данных: " . $db->connect_error);
 }
+
 ?>
+
+

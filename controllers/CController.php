@@ -1,5 +1,5 @@
 <?php
-/*
+
 
 require_once ("models/CModel.php");
 require_once ("views/CView.php");

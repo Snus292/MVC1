@@ -1,4 +1,5 @@
 <?php
+/*
 // к настройкам
 require("db_config.php");
 
