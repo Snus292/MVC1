@@ -1,23 +1,32 @@
 <?php
-/*
-// к настройкам
-require("db_config.php");
+require 'db_config.php';
 
+class CModel_db {
+    private $db;
 
-$query = "SELECT * FROM ";// таблица
-$result = $db->query($query);
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
- // обрабтка рез
-        echo $row[""]; //название_колонки
+    public function __construct($db) {
+        $this->db = $db;
     }
-    $result->free();
-} else {
-    echo "Ошибка выполнения запроса: " . $db->error;
+
+    public function GetData() {
+        $arrayResult = array();
+
+        $query = "SELECT * FROM hoscon_data"; 
+
+        $result = $this->db->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $arrayResult[] = array(
+                    "TITLE" => $row["title"],
+                    "DATE" => $row["date"],
+                    "AUTHOR" => $row["author"],
+                    "IMAGE" => $row["image"],
+                    "TEXT" => $row["text"]
+                );
+            }
+        }
+
+        return $arrayResult;
+    }
 }
-
-// закрытие соединения
-$db->close();
-?>
-

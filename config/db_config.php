@@ -1,7 +1,5 @@
 
 <?php
-/*
-
 
 $dbHost = "localhost";
 $dbUser = "phpmvc1"; 
