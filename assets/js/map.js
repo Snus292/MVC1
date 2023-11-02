@@ -15,7 +15,7 @@ var styleArray = [
     zoom: 10,
     styles: styleArray,
     scrollwheel: true,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
       mapTypeControl: true,          
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };

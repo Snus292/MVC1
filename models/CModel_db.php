@@ -29,7 +29,7 @@ class CModel_db {
                 );
             }
         }
-
+        
         return $arrayResult;
     }
 }

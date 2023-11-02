@@ -9,12 +9,12 @@
       $("#preloader").css("display","none");
     });
     // nice-select
-    $("select").niceSelect();
+    $('select').niceSelect();
   });
 
   // header-scroll
   var fixed_top_three = $(".header");
-  $(window).on("scroll", function () {
+  $(window).on('scroll', function () {
     if ($(this).scrollTop() < 500) {
       fixed_top_three.removeClass("active");
     } else {
@@ -37,16 +37,16 @@
   });
 
   // popup js
-  $(".popup-youtube").magnificPopup({
-    type: "video"
+  $('.popup-youtube').magnificPopup({
+    type: 'video'
   });
-  $(".image-popup").magnificPopup({
-    type: "image"
+  $('.image-popup').magnificPopup({
+    type: 'image'
   });
 
   // scroll-to-top
   var ScrollTop = $(".scrollToTop");
-  $(window).on("scroll", function () {
+  $(window).on('scroll', function () {
     if ($(this).scrollTop() < 500) {
         ScrollTop.removeClass("active");
     } else {
@@ -55,7 +55,7 @@
   });
 
   // slider
-  var swiper = new Swiper(".brand-wrapper", {
+  var swiper = new Swiper('.brand-wrapper', {
     slidesPerView: 3,
     loop: true,
     autoplay: {
@@ -76,7 +76,7 @@
   });
 
   // slider
-  var swiper = new Swiper(".testimonial-wrapper", {
+  var swiper = new Swiper('.testimonial-wrapper', {
     slidesPerView: 2,
     loop: true,
     autoplay: {
@@ -97,7 +97,7 @@
   });
 
   // slider
-  var swiper = new Swiper(".client-wrapper", {
+  var swiper = new Swiper('.client-wrapper', {
     slidesPerView: 1,
     loop: true,
     autoplay: {
@@ -118,13 +118,13 @@
   });
 
   // slider
-  var swiper = new Swiper(".price-wrapper", {
+  var swiper = new Swiper('.price-wrapper', {
     slidesPerView: 3,
     centeredSlides: true,
     loop: true,
     navigation: {
-      nextEl: ".ruddra-next",
-      prevEl: ".ruddra-prev",
+      nextEl: '.ruddra-next',
+      prevEl: '.ruddra-prev',
     },
     autoplay: {
       speeds: 1000,
@@ -141,24 +141,24 @@
   });
 
     //Search
-    $(".search-bar, .skip").on("click", function() {
-        $(".header-form").toggleClass("active");
+    $('.search-bar, .skip').on('click', function() {
+        $('.header-form').toggleClass('active');
       });
-      $(".ellipsis-bar").on("click", function() {
-        $(".header-top-area").toggleClass("active");
-        $(".overlay").addClass("active");
+      $('.ellipsis-bar').on('click', function() {
+        $('.header-top-area').toggleClass('active');
+        $('.overlay').addClass('active');
       })
 
       //Overlay On Click Functions
-      $(".overlay").on("click", function () {
-        $(this).removeClass("active");
-        $(".header-bar").removeClass("active");
-        $(".menu").removeClass("active");
-        $(".header-top-area").removeClass("active");
+      $('.overlay').on('click', function () {
+        $(this).removeClass('active');
+        $('.header-bar').removeClass('active');
+        $('.menu').removeClass('active');
+        $('.header-top-area').removeClass('active');
       })
 
       //The Password Show
-      $("#show-pass-one").on("click", function() {
+      $('#show-pass-one').on('click', function() {
         var x = document.getElementById("myInput");
         if (x.type === "password") {
             x.type = "text";
@@ -167,7 +167,7 @@
         }
     });
 
-    $("#show-pass-two").on("click", function() {
+    $('#show-pass-two').on('click', function() {
         var x = document.getElementById("myInputTwo");
         if (x.type === "password") {
             x.type = "text";
@@ -176,7 +176,7 @@
         }
     });
 
-    $("#show-pass-three").on("click", function() {
+    $('#show-pass-three').on('click', function() {
         var x = document.getElementById("myInputThree");
         if (x.type === "password") {
             x.type = "text";
@@ -186,18 +186,18 @@
     });
 
     //Form Slider
-    $(".account-control-button").on("click", function() {
-        $(".account-area").toggleClass("change-form");
+    $('.account-control-button').on('click', function() {
+        $('.account-area').toggleClass('change-form');
     })
 
     // counter
-    $(".counter-number").counterUp({
+    $('.counter-number').counterUp({
       delay: 10,
       time: 8000,
       offset: 70,
       beginAt: 10,
       formatter: function (n) {
-        return n.replace(/,/g, ".");
+        return n.replace(/,/g, '.');
       }
     });
     

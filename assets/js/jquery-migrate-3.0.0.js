@@ -30,7 +30,7 @@
       log( "JQMIGRATE: Migrate plugin loaded multiple times" );
     }
   
-    // Show a message on the console so devs know we"re active
+    // Show a message on the console so devs know we're active
     log( "JQMIGRATE: Migrate is installed" +
       ( jQuery.migrateMute ? "" : " with logging active" ) +
       ", version " + jQuery.migrateVersion );
@@ -47,7 +47,7 @@
     jQuery.migrateTrace = true;
   }
   
-  // Forget any warnings we"ve already given; public
+  // Forget any warnings we've already given; public
   jQuery.migrateReset = function() {
     warnedAbout = {};
     jQuery.migrateWarnings.length = 0;
@@ -97,7 +97,7 @@
     if ( typeof arg1 === "string" && arg1 === "#" ) {
   
       // JQuery( "#" ) is a bogus ID selector, but it returned an empty set before jQuery 3.0
-      migrateWarn( "jQuery( "#" ) is not a valid selector" );
+      migrateWarn( "jQuery( '#' ) is not a valid selector" );
       args[ 0 ] = [];
     }
   
@@ -113,24 +113,24 @@
     if ( typeof selector === "string" && rattrHashTest.test( selector ) ) {
   
       // The nonstandard and undocumented unquoted-hash was removed in jQuery 1.12.0
-      // First see if qS thinks it"s a valid selector, if so avoid a false positive
+      // First see if qS thinks it's a valid selector, if so avoid a false positive
       try {
         document.querySelector( selector );
       } catch ( err1 ) {
   
-        // Didn"t *look* valid to qSA, warn and try quoting what we think is the value
+        // Didn't *look* valid to qSA, warn and try quoting what we think is the value
         selector = selector.replace( rattrHashGlob, function( _, attr, op, value ) {
           return "[" + attr + op + "\"" + value + "\"]";
         } );
   
-        // If the regexp *may* have created an invalid selector, don"t update it
+        // If the regexp *may* have created an invalid selector, don't update it
         // Note that there may be false alarms if selector uses jQuery extensions
         try {
           document.querySelector( selector );
-          migrateWarn( "Attribute selector with "#" must be quoted: " + args[ 0 ] );
+          migrateWarn( "Attribute selector with '#' must be quoted: " + args[ 0 ] );
           args[ 0 ] = selector;
         } catch ( err2 ) {
-          migrateWarn( "Attribute selector with "#" was not fixed: " + args[ 0 ] );
+          migrateWarn( "Attribute selector with '#' was not fixed: " + args[ 0 ] );
         }
       }
     }
@@ -238,7 +238,7 @@
         jQuery.data( this, "__className__", className );
       }
   
-      // If the element has a class name or if we"re passed `false`,
+      // If the element has a class name or if we're passed `false`,
       // then remove the whole classname (if there was one, the above saved it).
       // Otherwise bring back whatever was previously saved (if anything),
       // falling back to the empty string if nothing was stored.
@@ -255,7 +255,7 @@
   
   var internalSwapCall = false;
   
-  // If this version of jQuery has .swap(), don"t false-alarm on internal uses
+  // If this version of jQuery has .swap(), don't false-alarm on internal uses
   if ( jQuery.swap ) {
     jQuery.each( [ "height", "width", "reliableMarginRight" ], function( _, name ) {
       var oldHook = jQuery.cssHooks[ name ] && jQuery.cssHooks[ name ].get;
@@ -391,7 +391,7 @@
       }
   
       // Use .triggerHandler here because:
-      // - load and unload events don"t need to bubble, only applied to window or image
+      // - load and unload events don't need to bubble, only applied to window or image
       // - error event should not bubble to window, although it does pre-1.7
       // See http://bugs.jquery.com/ticket/11820
       this.triggerHandler.apply( this, args );
@@ -408,7 +408,7 @@
   jQuery.event.special.ready = {
     setup: function() {
       if ( this === document ) {
-        migrateWarn( ""ready" event is deprecated" );
+        migrateWarn( "'ready' event is deprecated" );
       }
     }
   };
