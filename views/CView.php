@@ -3,11 +3,15 @@
 require_once ("controllers/CController.php");
 
 class CView {
+    private $controller;
+
+    public function __construct($db) {
+        $this->controller = new CController($db);
+    }
     public function ViewMainPage () {
-        $controller = new CController();
-        $arrayResult = $controller->SetMainPage();
+        $arrayResult = $this->controller->SetMainPage();
         include "views/view_mainPage.php";
-        Return $arrayResult;
+        return $arrayResult;
     }
 
     public function GetHeader() {

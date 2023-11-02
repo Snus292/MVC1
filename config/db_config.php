@@ -1,14 +1,11 @@
-
 <?php
-/*
-
 
 $dbHost = "localhost";
 $dbUser = "phpmvc1"; 
 $dbPassword = "phpmvc1"; 
 $dbName = "phpmvc1"; 
 
-// соединение с базой данных
+// соединение с DB
 $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
 
 // проверка наличие ошибок
